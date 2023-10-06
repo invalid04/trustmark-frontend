@@ -1,9 +1,11 @@
-import Example from "@/components/forms/contact"
+import Contact from "@/components/forms/contact"
+import Navbar from "@/components/navbar/navbar"
 
 export default function Home() {
   return (
-    <>
-      <Example />
-    </>
+    <div className='bg-[#F5F5F5]'>
+      <Navbar />
+      <Contact />
+    </div>
   )
 }
