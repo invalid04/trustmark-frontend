@@ -10,20 +10,28 @@ export default function Navbar() {
     <nav className='flex justify-between items-center h-12 px-6 py-4 bg-[#FFFFFF]'>
 
         <div>
-            <Link href='/' className='flex gap-2 items-center'>
+            <Link href='/' className='flex gap-1 items-center'>
               <Image 
                 src='/tmark.png' 
-                width={40}
-                height={40}
+                width={50}
+                height={50}
               /> 
-              <h1>Trustmark</h1>
+              <h1 className='text-2xl font-extrabold text-gray-500'>Trustmark</h1>
             </Link>
         </div>
 
         <div className='flex gap-6'>
-            <Link href='/'><h1>Example</h1></Link>
-            <Link href='/'><h1>Example</h1></Link>
-            <Link href='/'><h1>Example</h1></Link>
+            <Link href='/' className='border-b-2 border-transparent hover:border-blue-600'>
+              Example
+            </Link>
+
+            <Link href='/' className='border-b-2 border-transparent hover:border-blue-600'>
+              Example
+            </Link>
+
+            <Link href='/' className='border-b-2 border-transparent hover:border-blue-600'>
+              Example
+            </Link>
         </div>
 
         <div className='items-center'>
