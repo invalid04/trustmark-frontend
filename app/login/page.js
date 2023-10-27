@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import axios from 'axios';
+import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Input } from '@/components/ui/input';
@@ -22,19 +22,20 @@ export default function Page() {
     function onSubmit(event) {
         event.preventDefault();
 
-        axios
-            .post('api/register', state)
-            .then(() => {
-                router.refresh();
-            })
-            .then(() => {
-                setTimeout(() => {
-                    router.push('/login');
-                }, 2500);
-            })
-            .catch((error) => {
-                throw new Error(error);
+        signIn('credentials', {
+            ...state,
+            redirect: false,
+        })
+            .then((callback) => {
+                if (callback?.ok) {
+                    router.refresh();
+                }
+                if (callback?.error) {
+                    throw new Error('Wrong Credentials');
+                }
             });
+
+        router.push('/');
     }
 
     return (
@@ -47,7 +48,7 @@ export default function Page() {
 
             <div>
                 <div>
-                    Already have an account? <Link href='/login' className='text-blue-500'>Sign In</Link>
+                    Don't have an account? <Link href='/signup' className='text-blue-500'>Sign Up!</Link>
                 </div>
             </div>
         </form>
