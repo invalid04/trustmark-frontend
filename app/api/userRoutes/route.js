@@ -44,22 +44,24 @@ export async function POST(request) {
 }
 
 // Fetch a single user or all users
-export async function GET(request, { params }) {
-    const { userId } = params;
+export async function GET(req) {
+    // Accessing the userId parameter from the query object
+    const { userId } = req.query;
 
-    if (userId) {
+    try {
         const user = await prisma.user.findUnique({
             where: {
                 id: userId,
             },
         });
+
         if (!user) {
-            return NextResponse.error({ status: 404 });
+            return new Response(JSON.stringify({ error: 'User not found' }), { status: 404, headers: { 'Content-Type': 'application/json' } });
         }
-        return NextResponse.json(user);
-    } else {
-        const users = await prisma.user.findMany();
-        return NextResponse.json(users);
+
+        return new Response(JSON.stringify(user), { status: 200, headers: { 'Content-Type': 'application/json' } });
+    } catch (error) {
+        return new Response(JSON.stringify({ error: error.message }), { status: 500, headers: { 'Content-Type': 'application/json' } });
     }
 }
 
