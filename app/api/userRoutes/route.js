@@ -28,7 +28,7 @@ import { NextResponse } from 'next/server';
 import prisma from '@/app/lib/prismadb';
 
 // Create a new user
-export async function post(request) {
+export async function POST(request) {
     const body = await request.json();
     const { email, password } = body;
     const hashedPassword = await bcrypt.hash(password, 12);
@@ -44,7 +44,7 @@ export async function post(request) {
 }
 
 // Fetch a single user or all users
-export async function get(request, { params }) {
+export async function GET(request, { params }) {
     const { userId } = params;
 
     if (userId) {
@@ -64,7 +64,7 @@ export async function get(request, { params }) {
 }
 
 // Update a user's information
-export async function put(request, { params }) {
+export async function PUT(request, { params }) {
     const { userId } = params;
     const updateBody = await request.json();
     const { email, password } = updateBody;
@@ -82,7 +82,7 @@ export async function put(request, { params }) {
 }
 
 // Delete a user
-export async function del(request, { params }) {
+export async function DELETE(request, { params }) {
     const { userId } = params;
 
     await prisma.user.delete({
