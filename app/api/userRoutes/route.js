@@ -25,7 +25,7 @@ export async function POST(request) {
 // Assuming this file is app/api/user/[userId]/route.js
 import bcrypt from 'bcrypt';
 import { NextResponse } from 'next/server';
-import prisma from '../../../lib/prismadb'; // Adjust the import path as necessary
+import prisma from '@/app/lib/prismadb';
 
 // Create a new user
 export async function post(request) {
