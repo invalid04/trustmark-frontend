@@ -18,25 +18,11 @@ model User {
   updatedAt         DateTime @updatedAt
 }
 
-model FormTemplate {
+model Post {
   id                String @id @default(auto()) @map("_id") @db.ObjectId
-  TemplateName      String  
-  TemplateStructure String
-  CreationDate      DateTime @default(now())
-}
-
-model Response {
-  id                String @id @default(auto()) @map("_id") @db.ObjectId
-  userFormId        Int       
-  submissionData    String
-  submissionDate    DateTime  @default(now())
-}
-
-model UserForm {
-  id                String @id @default(auto()) @map("_id") @db.ObjectId
-  userId            Int       
-  templateId        Int       
-  formName          String
-  formStructure     String
-  creationDate      DateTime  @default(now())
+  firstName         String 
+  lastName          String 
+  email             String
+  phoneNumber       String 
+  message           String
 }
