@@ -17,6 +17,7 @@ export default function Navbar({ myUser }) {
               src='/tmark.png'
               width={50}
               height={50}
+              alt='logo'
             />
             <h1 className='text-2xl font-extrabold text-gray-500'>Trustmark</h1>
           </Link>
