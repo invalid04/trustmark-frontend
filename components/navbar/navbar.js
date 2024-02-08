@@ -28,8 +28,8 @@ export default function Navbar({ myUser }) {
             Example
           </Link>
 
-          <Link href='/' className='border-b-2 border-transparent hover:border-blue-600'>
-            Example
+          <Link href='/ContactResponsePage' className='border-b-2 border-transparent hover:border-blue-600'>
+            Responses
           </Link>
 
           <Link href='/' className='border-b-2 border-transparent hover:border-blue-600'>
