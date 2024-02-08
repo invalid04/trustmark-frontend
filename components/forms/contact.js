@@ -18,10 +18,10 @@ export default function Contact() {
         <div className="flex space-x-4">
           {/* Left Side */}
           <div className="w-1/2">
-            <Input type="text" placeholder="First Name" className="mb-4" id='firstName' />
-            <Input type="text" placeholder="Last Name" className="mb-4" id='lastName' />
-            <Input type="email" placeholder="Email" className="mb-4" id='email' />
-            <Input type="tel" placeholder="Phone Number" className="mb-4" id='phoneNumber' />
+            <Input type="text" placeholder="First Name" className="mb-4" name='firstName' />
+            <Input type="text" placeholder="Last Name" className="mb-4" name='lastName' />
+            <Input type="email" placeholder="Email" className="mb-4" name='email' />
+            <Input type="tel" placeholder="Phone Number" className="mb-4" name='phoneNumber' />
           </div>
 
           {/* Right Side */}
