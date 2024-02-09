@@ -14,7 +14,7 @@ export default function Contact() {
         <h2 className="text-2xl font-semibold">Contact Us!</h2>
       </div>
 
-        // Form Inputs
+        
         <div className="flex space-x-4">
           {/* Left Side */}
           <div className="w-1/2">
