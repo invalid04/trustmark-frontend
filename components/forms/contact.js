@@ -24,7 +24,7 @@ export default function Contact() {
 
           {/* Right Side */}
           <div className="w-1/2">
-            <Textarea placeholder="Message" className="mb-4" id='message' />
+            <Textarea placeholder="Message" className="mb-4" name='message' />
             <Button type="submit" variant="bank" size="contact">
               Submit
             </Button>
