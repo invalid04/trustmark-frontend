@@ -23,7 +23,7 @@ export default function Page() {
         event.preventDefault();
 
         axios
-            .post('api/register', state)
+            .post('api/userRoutes', state)
             .then(() => {
                 router.refresh();
             })

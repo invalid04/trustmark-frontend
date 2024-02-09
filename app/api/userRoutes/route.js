@@ -1,4 +1,4 @@
-/*
+
 import bcrypt from 'bcrypt';
 import { NextResponse } from 'next/server';
 import prisma from '../../lib/prismadb';
@@ -19,15 +19,15 @@ export async function POST(request) {
 
     return NextResponse.json(user);
 }
-*/
+
 // app/api/user/[userId]/route.js
 
 // Assuming this file is app/api/user/[userId]/route.js
-import bcrypt from 'bcrypt';
-import { NextResponse } from 'next/server';
+//import bcrypt from 'bcrypt';
+/*import { NextResponse } from 'next/server';
 import prisma from '@/app/lib/prismadb'; // Adjust the import path as necessary
 
-// Create a new user
+ Create a new user
 export async function post(request) {
     const body = await request.json();
     const { email, password } = body;
@@ -91,3 +91,4 @@ export async function del(request, { params }) {
 
     return NextResponse.json({ message: 'User deleted successfully' });
 }
+*/
