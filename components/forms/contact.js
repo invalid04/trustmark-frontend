@@ -13,6 +13,7 @@ export default function Contact() {
       <div className="mb-6">
         <h2 className="text-2xl font-semibold">Contact Us!</h2>
       </div>
+
         <div className="flex space-x-4">
           {/* Left Side */}
           <div className="w-1/2">
